@@ -21,10 +21,10 @@ define(['modules/core/runners/runner'],function(runner){
 	    email: 'localhost'+'/code_red',
 	});
 
-	require(['modules/core/controllers/mainController',
-			'modules/core/controllers/homeController'],function(){
-
-		angular.bootstrap(document,['coreModule']);
+	require(['modules/core/controllerReferences'],function(reference){
+		require(reference,function(){
+			angular.bootstrap(document,['coreModule']);
+		});
 	});
 
 });
